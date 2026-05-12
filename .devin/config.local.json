@@ -15,7 +15,12 @@
       "Exec(git status)",
       "Exec(gh auth)",
       "Exec(gh repo)",
-      "Exec(git init)"
+      "Exec(git init)",
+      "Exec(git push)",
+      "Exec(git add)",
+      "Exec(grep)",
+      "Exec(sed)",
+      "Exec(git)"
     ]
   }
 }
