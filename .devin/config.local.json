@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Exec(flutter pub)",
+      "Exec(mkdir)",
+      "Exec(command)",
+      "Exec(keytool)",
+      "Exec(cat)",
+      "Exec(flutter analyze)",
+      "Exec(find)",
+      "Exec(git clone)",
+      "Exec(npx skills)",
+      "Exec(git pull)",
+      "Exec(kill)",
+      "Exec(git status)",
+      "Exec(gh auth)",
+      "Exec(gh repo)",
+      "Exec(git init)"
+    ]
+  }
+}
