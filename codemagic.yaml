@@ -1,0 +1,28 @@
+workflows:
+  ios-unsigned:
+    name: iOS unsigned build (for sideloading)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+      - name: Install CocoaPods dependencies
+        script: |
+          cd ios
+          pod install
+      - name: Flutter build iOS (no codesign)
+        script: |
+          flutter build ios --release --no-codesign
+      - name: Create unsigned .ipa
+        script: |
+          mkdir -p build/ios/ipa
+          cd build/ios/iphoneos
+          mkdir -p Payload
+          cp -r Runner.app Payload/
+          zip -r ../ipa/VisionMeasure-unsigned.ipa Payload
+    artifacts:
+      - build/ios/ipa/*.ipa
